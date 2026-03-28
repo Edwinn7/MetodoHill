@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodo Hill</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="app-header">
+            <h1>🔐 Metodo Hill</h1>
+            <p>Cifrado Hill</p>
+        </header>
+
+        <div class="hill-container">
+            <div id="mode-indicator" class="mode-indicator encrypt">
+                🔐 Modo Encriptación
+            </div>
+            <!-- TABS -->
+            <div class="tabs">
+                <button id="tab-enc" class="tab active">Encriptar</button>
+                <button id="tab-dec" class="tab">Desencriptar</button>
+            </div>
+
+            <!-- ENCRYPT -->
+            <div id="enc" class="section active">
+                <label>Texto</label>
+                <input id="enc-input" type="text" placeholder="" />
+
+                <button id="enc-btn">Encriptar</button>
+
+                <div id="enc-result" class="fade"></div>
+            </div>
+
+            <!-- DECRYPT -->
+            <div id="dec" class="section">
+                <label>Texto cifrado</label>
+                <input id="dec-input" type="text" placeholder="" />
+
+                <button id="dec-btn">Desencriptar</button>
+
+                <div id="dec-result" class="fade"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>

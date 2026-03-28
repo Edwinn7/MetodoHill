@@ -1,0 +1,266 @@
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* VARIABLES */
+:root {
+  --bg: #0b0f19;
+  --card: #121826;
+  --card-2: #1a2233;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --text: #e6eaf2;
+  --muted: #9aa4b2;
+  --border: #2a3447;
+  --success: #22c55e;
+  --danger: #ef4444;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* APP */
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* HEADER */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.app-header p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* CARD */
+.hill-container {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  background: var(--card-2);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* LABEL */
+label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #020617;
+  color: white;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.3);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* RESULT */
+.result-box {
+  background: var(--card-2);
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.copy-btn:hover {
+  color: white;
+}
+
+.result-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.result-value {
+  font-size: 18px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* STEPS */
+.steps {
+  margin-top: 16px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.step-row {
+  font-size: 12px;
+  padding: 6px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: rgba(255,255,255,0.03);
+  transition: 0.2s;
+}
+
+.step-row:hover {
+  background: rgba(99,102,241,0.2);
+}
+
+/* ERROR */
+.error {
+  color: var(--danger);
+  margin-top: 10px;
+}
+
+/* ANIMATION */
+.fade {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.step-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.step-phase {
+  font-size: 13px;
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.step-phase span {
+  font-weight: bold;
+  color: var(--primary);
+  margin-right: 4px;
+}
+
+.step-content {
+  margin-top: 3px;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.step-final {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.mode-indicator {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 6px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ENCRYPT */
+.mode-indicator.encrypt {
+  background: rgba(99,102,241,0.2);
+  color: #818cf8;
+}
+
+/* DECRYPT */
+.mode-indicator.decrypt {
+  background: rgba(34,197,94,0.2);
+  color: #4ade80;
+}
+.section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+/* separador visual */
+.section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--border);
+  margin: 10px 0 16px;
+}
